@@ -5,30 +5,30 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "tb_viagens")
+@Table(name = "tb_destinos")
 public class Viagem {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "Nome do país", nullable = true, unique = true)
+	@Column(name = "nome_destino", nullable = true, unique = true)
 	private String nome;
 	
-	
-	private String local;
-	
+	@Column(name = "descricao")
 	private String descricao;
 	
 	@NotBlank(message = "O preço deve ser inserido.")
+	@Column(name = "preco_medio", nullable = true)
 	private double precoMedio;
 	
-	@Max(2025)
-	private Integer dataViagem;
+	@ManyToOne
+	private Cliente clientes;
 
 	
 	public Viagem() {}
@@ -54,16 +54,6 @@ public class Viagem {
 	}
 
 
-	public String getLocal() {
-		return local;
-	}
-
-
-	public void setLocal(String local) {
-		this.local = local;
-	}
-
-
 	public String getDescricao() {
 		return descricao;
 	}
@@ -84,15 +74,5 @@ public class Viagem {
 	}
 
 
-	public Integer getDataViagem() {
-		return dataViagem;
-	}
-
-
-	public void setDataViagem(Integer dataViagem) {
-		this.dataViagem = dataViagem;
-	}
-	
 }
-
 

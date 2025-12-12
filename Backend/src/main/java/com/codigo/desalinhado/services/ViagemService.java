@@ -14,7 +14,7 @@ public class ViagemService {
 	@Autowired
 	private ViagemRepository repository;
 	
-	public Viagem salvarMusica(Viagem viagem) {
+	public Viagem salvarViagem(Viagem viagem) {
 		return repository.save(viagem);
 		
 		
@@ -30,12 +30,10 @@ public class ViagemService {
 		return repository.findById(id).orElse(null);
 	}
 	
-	public void atualizarMusica(Long Id, Viagem vNovo) {
+	public void atualizarViagem(Long Id, Viagem vNovo) {
         Viagem vVelho= repository.findById(Id).get();
         
-        	vVelho.setDataViagem(vNovo.getDataViagem());
             vVelho.setDescricao(vNovo.getDescricao());
-            vVelho.setLocal(vNovo.getLocal());
             vVelho.setNome(vNovo.getNome());
             vVelho.setPrecoMedio(vNovo.getPrecoMedio());
 	}

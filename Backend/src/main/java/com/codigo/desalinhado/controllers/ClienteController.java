@@ -11,31 +11,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codigo.desalinhado.entities.Viagem;
-import com.codigo.desalinhado.services.ViagemService;
+import com.codigo.desalinhado.entities.Cliente;
+import com.codigo.desalinhado.services.ClienteService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/viagem")
-public class ViagemController {
+public class ClienteController {
 	
 	@Autowired
-	private ViagemService service;
+	private ClienteService service;
 
 	@PostMapping
-	public Viagem cadastrar(@Valid @RequestBody Viagem viagem) {
-		return service.salvarViagem(viagem);
+	public Cliente cadastrar(@Valid @RequestBody Cliente cliente) {
+		return service.salvarViagem(cliente);
 		
 	}
 	
 	@GetMapping
-	public List<Viagem>listarTodos() {
-		return service.listarViagem();
+	public List<Cliente>listarTodos() {
+		return service.listarCliente();
 	}
 	
 	@GetMapping("/{id}")
-	public Viagem buscarPorId(@PathVariable Long id) {
+	public Cliente buscarPorId(@PathVariable Long id) {
 		return service.buscarPorId(id);
 	}
 	
