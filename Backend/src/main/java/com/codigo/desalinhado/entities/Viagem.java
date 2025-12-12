@@ -16,7 +16,7 @@ public class Viagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "Local da viagem", nullable = true, unique = true)
+	@Column(name = "Nome do país", nullable = true, unique = true)
 	private String nome;
 	
 	
