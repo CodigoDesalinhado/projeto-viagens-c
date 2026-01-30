@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desafio: Monte seu Site</title>
+  <link rel="stylesheet" href="site.css ">
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <img
+          src="adada.png"
+          alt="logo" />
+        <span>Viagens mais - Agenciamento de Viagens</span>
+      </div>
+      <div class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#tabela">Tabela</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Apresentação">
+      <div>
+
+        <h1>Viagens mais - Agenciamento de Viagens<br> </h1>
+        <p class="container" style="padding:0; margin:12px 0 0; color:var(--muted)"></p>
+        <div class="cta">
+          
+          <a class="btn" href="#contato">Fale comigo</a>
+        </div>
+      </div>
+      <div class="mock" role="img" aria-label="Prévia visual do site">
+        <div class="bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <img src="unnamed.png"
+          alt="Imagem ilustrativa" />
+      </div>
+    </section>
+
+    <section id="galeria" class="container">
+      <h2>Galeria</h2>
+      <p></p>
+      <div class="gallery" aria-label="Galeria de imagens">
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cidade_de_luz_e_cor.jpg/960px-Cidade_de_luz_e_cor.jpg"
+            alt="-Jujutsu-Kaisen-">
+          <figcaption>-Rio-de-Janeiro-(RJ)-</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/dd/dd/02.jpg"
+            alt="Descrição da imagem 2">
+          <figcaption>-Salvador-(BA)-</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.dicasdeviagem.com/wp-content/uploads/2019/06/pontos-turisticos-gramado-rs.jpg"
+            alt="Descrição da imagem 3">
+          <figcaption>-Gramado-(RS)-</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gazetadopovo.com.br/2024/04/02173449/Shutterstock_2120859116.jpg"
+            alt="Descrição da imagem 4">
+          <figcaption>-Foz Do Iguaçu-(PR)-</figcaption>
+        </figure>
+        <figure>
+          <img src="https://beachpark.com.br/app/uploads/2025/05/Ajuste-Banner-Site-Institucional-1920-x-770.webp" alt="Descrição da imagem 5">
+          <figcaption>-Fortaleza-(CE)-</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/09/Morro_da_Cruz%2C_Florian%C3%B3polis_-_SC%2C_Brazil_-_panoramio_%28cropped%29.jpg"
+            alt="Descrição da imagem 6">
+          <figcaption>-Florianópolis-(SC)-</figcaption>
+        </figure>
+        <figure>
+          <img src="https://bonitoepantanal.com.br/wp-content/uploads/2024/05/Bonito-ms-beneficios-2-1024x576.jpg"
+            alt="-Jujutsu-Kaisen-">
+          <figcaption>-Manaus-(AM)-</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://www.gov.br/g20/pt-br/noticias/presente-e-futuro-das-cidades-maior-metropole-das-americas-sao-paulo-recebe-cupula-do-urban-20/@@images/image-2000-d280960f00b6ad7cbaae4cc620d0c389.jpeg"
+            alt="-Jujutsu-Kaisen-">
+          <figcaption>-São Paulo-(SP)-</figcaption>
+        </figure>
+
+
+      </div>
+    </section>
+
+
+    <section id="recursos" class="container">
+      <h2></h2>
+      <ul>
+
+      </ul>
+    </section>
+
+    <section id="contato" class="container">
+      <h2>Contato</h2>
+      <p></p>
+      <form onsubmit="event.preventDefault(); alert('Formulário enviado!');">
+        <div>
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email" placeholder="voce@exemplo.com" required>
+        </div>
+        <div>
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto">
+            <option>Orçamento</option>
+            <option>Suporte</option>
+            <option>Parceria</option>
+          </select>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+        </div>
+        <button class="btn primary" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container" style="padding-bottom:60px">
+    <small>© 2025 • Feito por <a href="#">Paulo - Matheus - Murillo - Rennan - Marcelo</a>. • <a href="#">Voltar ao
+        topo</a></small>
+  </footer>
+
+  <script>
+
+    document.querySelectorAll('.menu a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (a.hash) { e.preventDefault(); document.querySelector(a.hash)?.scrollIntoView({ behavior: 'smooth' }) }
+      })
+    })
+
+
+    const header = document.querySelector('header');
+    const toggleHeader = () => {
+      header.style.background = window.scrollY > 20 ? 'rgba(15,23,42,.9)' : 'rgba(15,23,42,.75)';
+    }
+    window.addEventListener('scroll', toggleHeader);
+    toggleHeader();
+  </script>
+</body>
+
+</html>

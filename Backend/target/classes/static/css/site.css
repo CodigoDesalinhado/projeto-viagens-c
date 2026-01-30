@@ -1,0 +1,74 @@
+:root {
+  --bg:#f5f7fa; --text:#1e293b; --primary:#2563eb; --primary-dark:#1e40af;
+}
+
+body {
+  margin:0;
+  font-family:"Bodoni Moda SC", serif;
+  background:var(--bg);
+  color:var(--text);
+}ader {
+  position:fixed; top:0; width:100%;
+  backdrop-filter:blur(10px);
+  background:rgba(15,23,42,0.6);
+  z-index:1000; padding:10px 0;
+}
+
+.nav {
+  max-width:1200px; margin:auto;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 20px;
+}
+
+.logo { display:flex; align-items:center; gap:10px; color:white; }
+.logo img { height:45px; border-radius:6px; }
+
+.menu a {
+  margin-left:20px; color:white;
+  text-decoration:none; font-weight:bold;
+}
+.menu a:hover { color:var(--primary); }
+
+.hero {
+  max-width:1200px; margin:120px auto 60px;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 20px;
+}
+
+.hero h1 { font-size:40px; margin:0 0 10px; }
+
+.btn {
+  background:var(--primary); color:white;
+  padding:10px 20px; border-radius:6px;
+  text-decoration:none; font-weight:bold;
+}
+.btn:hover { background:var(--primary-dark); }
+
+.mock img {
+  width:320px; border-radius:10px;
+  box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+
+.gallery {
+  display:grid; gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+figure {
+  background:white; border-radius:10px; overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+figure:hover { transform:scale(1.03); }
+figure img { width:100%; height:160px; object-fit:cover; }
+figcaption { padding:10px; text-align:center; font-weight:bold; }
+
+footer { text-align:center; padding:20px; color:#64748b; }
+
+/* RESPONSIVO */
+@media (max-width:900px) {
+  .hero{ flex-direction:column; text-align:center; }
+  .mock img{ width:90%; margin-top:20px; }
+}
+
+@media(max-width:600px){ .menu{ display:none; } }
